@@ -1,33 +1,30 @@
-"""
-Visualizing factors influencing wages
-=====================================
+##Visualizing factors influencing wages
+##=====================================   SUCCESSFUL
 
-This example uses seaborn to quickly plot various factors relating wages,
-experience and eduction.
+##This example uses seaborn to quickly plot various factors relating wages,
+##experience and eduction.
 
-Seaborn (https://seaborn.pydata.org) is a library that combines
-visualization and statistical fits to show trends in data.
+##Seaborn (https://seaborn.pydata.org) is a library that combines
+##visualization and statistical fits to show trends in data.
 
-Note that importing seaborn changes the matplotlib style to have an
-"excel-like" feeling. This changes affect other matplotlib figures. To
-restore defaults once this example is run, we would need to call
-plt.rcdefaults().
-"""
+##Note that importing seaborn changes the matplotlib style to have an
+##"excel-like" feeling. This changes affect other matplotlib figures. To
+##restore defaults once this example is run, we would need to call
+##plt.rcdefaults().
 
+##########################################################################
 # Standard library imports
-import urllib
-import os
 
-import matplotlib.pyplot as plt
-
-##############################################################################
 # Load the data
 import pandas
 
+import os
+import urllib.request
+import matplotlib.pyplot as plt
 if not os.path.exists('wages.txt'):
     # Download the file if it is not present
-    urllib.urlretrieve('http://lib.stat.cmu.edu/datasets/CPS_85_Wages',
-                       'wages.txt')
+    urllib.urlretrieve(r'http://lib.stat.cmu.edu/datasets/CPS_85_Wages','wages.txt')
+data = urllib.request.urlretrieve(r'http://lib.stat.cmu.edu/datasets/CPS_85_Wages','wages.txt')
 
 # Give names to the columns
 names = [

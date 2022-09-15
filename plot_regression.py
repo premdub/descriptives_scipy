@@ -1,10 +1,10 @@
-"""
-Simple Regression
-====================
 
-Fit a simple linear regression using 'statsmodels', compute corresponding
-p-values.
-"""
+##Simple Regression
+##====================  SUCCESSFUL
+
+##Fit a simple linear regression using 'statsmodels', compute corresponding
+##p-values.
+
 # Original author: Thomas Haslwanter
 
 import numpy as np

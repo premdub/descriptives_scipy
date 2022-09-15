@@ -1,17 +1,14 @@
-"""
-Test for an education/gender interaction in wages
-==================================================
+##Test for an education/gender interaction in wages
+##==================================================SUCCESSFUL
 
-Wages depend mostly on education. Here we investigate how this dependence
-is related to gender: not only does gender create an offset in wages, it
-also seems that wages increase more with education for males than
-females.
+##Wages depend mostly on education. Here we investigate how this dependence
+##is related to gender: not only does gender create an offset in wages, it
+##also seems that wages increase more with education for males than
+##females.
 
-Does our data support this last hypothesis? We will test this using
-statsmodels' formulas
-(http://statsmodels.sourceforge.net/stable/example_formulas.html).
-
-"""
+##Does our data support this last hypothesis? We will test this using
+##statsmodels' formulas
+##(http://statsmodels.sourceforge.net/stable/example_formulas.html).
 
 ##############################################################################
 # Load and massage the data

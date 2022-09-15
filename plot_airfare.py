@@ -1,40 +1,43 @@
-"""
-Air fares before and after 9/11
-=====================================
+##Air fares before and after 9/11
+###=====================================    SUCCESSFUL
 
-This is a business-intelligence (BI) like application.
+###This is a business-intelligence (BI) like application.
 
-What is interesting here is that we may want to study fares as a function
-of the year, paired accordingly to the trips, or forgetting the year,
-only as a function of the trip endpoints.
+##What is interesting here is that we may want to study fares as a function
+##of the year, paired accordingly to the trips, or forgetting the year,
+##only as a function of the trip endpoints.
 
-Using statsmodels' linear models, we find that both with an OLS (ordinary
-least square) and a robust fit, the intercept and the slope are
-significantly non-zero: the air fares have decreased between 2000 and
-2001, and their dependence on distance travelled has also decreased
-
-"""
+##Using stats models' linear models, we find that both with an OLS (ordinary
+##least square) and a robust fit, the intercept and the slope are
+##significantly non-zero: the air fares have decreased between 2000 and
+##2001, and their dependence on distance travelled has also decreased
 
 # Standard library imports
-import urllib
-import os
 
 ##############################################################################
-# Load the data
+import urllib
+import urllib.request
+import os
+
+
+ # Load the data
 import pandas
 
 if not os.path.exists('airfares.txt'):
     # Download the file if it is not present
-    urllib.urlretrieve(
-        'http://www.stat.ufl.edu/~winner/data/airq4.dat',
-                       'airfares.txt')
+    urllib.urlretrieve(r'http://www.stat.ufl.edu/~winner/data/airq4.dat','airfares.txt')
 
+ #   # Download the file if it is not present
+
+data = urllib.request.urlretrieve(r'http://www.stat.ufl.edu/~winner/data/airq4.dat','airfares.txt')
+import os
 # As a seperator, ' +' is a regular expression that means 'one of more
 # space'
 data = pandas.read_csv('airfares.txt', sep=' +', header=0,
                        names=['city1', 'city2', 'pop1', 'pop2',
                               'dist', 'fare_2000', 'nb_passengers_2000',
                               'fare_2001', 'nb_passengers_2001'])
+
 
 # we log-transform the number of passengers
 import numpy as np
@@ -73,6 +76,16 @@ data_flat = pandas.concat([data_2000, data_2001])
 # Plot scatter matrices highlighting different aspects
 
 import seaborn
+
+##############
+## I got an error "cannot reindex on an axis with duplicate labels"
+# means duplicate values in original index, so the following functions are to remove rows with duplicated indices:
+
+data_flat[data_flat.index.duplicated()]
+data_flat= data_flat[~data_flat.index.duplicated()]= data_flat[~data_flat.index.duplicated()]= data_flat[~data_flat.index.duplicated()]
+
+###########################
+
 seaborn.pairplot(data_flat, vars=['fare', 'dist', 'nb_passengers'],
                  kind='reg', markers='.')
 

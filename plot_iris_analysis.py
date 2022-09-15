@@ -1,15 +1,14 @@
-"""
-Analysis of Iris petal and sepal sizes
-=======================================
+##"""
+##Analysis of Iris petal and sepal sizes
+##=====================================   SUCCESSFUL
 
-Ilustrate an analysis on a real dataset:
+##Ilustrate an analysis on a real dataset:
 
-- Visualizing the data to formulate intuitions
-- Fitting of a linear model
-- Hypothesis test of the effect of a categorical variable in the presence
-  of a continuous confound
+##- Visualizing the data to formulate intuitions
+##- Fitting of a linear model
+##- Hypothesis test of the effect of a categorical variable in the presence
+# ## of a continuous confound
 
-"""
 import matplotlib.pyplot as plt
 
 import pandas
@@ -18,7 +17,7 @@ from pandas.tools import plotting
 from statsmodels.formula.api import ols
 
 # Load the data
-data = pandas.read_csv('iris.csv')
+data = pandas.read_csv(r'C:\Users\premd\OneDrive\Desktop\HHA_507_\descriptives-scipy\data\iris.csv')
 
 ##############################################################################
 # Plot a scatter matrix

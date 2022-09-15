@@ -1,12 +1,12 @@
-"""
-Multiple Regression
-====================
 
-Calculate using 'statsmodels' just the best fit, or all the corresponding
-statistical parameters.
+##Multiple Regression
+##====================  SUCCESSFUL
 
-Also shows how to make 3d plots.
-"""
+##Calculate using 'statsmodels' just the best fit, or all the corresponding
+##statistical parameters.
+
+##Also shows how to make 3d plots.
+
 # Original author: Thomas Haslwanter
 
 import numpy as np
